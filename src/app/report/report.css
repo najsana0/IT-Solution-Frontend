@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#eef3fa;
+}
+
+/* Main Layout */
+
+.main-container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Left Side Banner */
+
+.left-section{
+    width:55%;
+    position:relative;
+
+    background-image:
+    linear-gradient(
+    rgba(10,25,47,0.75),
+    rgba(10,25,47,0.75)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    color:white;
+    padding:60px;
+}
+
+.overlay h1{
+    font-size:28px;
+    margin-bottom:20px;
+    color:#60a5fa;
+}
+
+.overlay h2{
+    font-size:58px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.overlay p{
+    font-size:22px;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.features div{
+    margin-bottom:15px;
+    font-size:20px;
+}
+
+/* Form Section */
+
+.report-container{
+    width:45%;
+    background:white;
+    padding:50px 60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.report-container h2{
+    text-align:center;
+    color:#0f172a;
+    margin-bottom:30px;
+    font-size:34px;
+}
+
+.report-container label{
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#334155;
+}
+
+.report-container input,
+.report-container select,
+.report-container textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.report-container input:focus,
+.report-container select:focus,
+.report-container textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+}
+
+.report-container textarea{
+    resize:none;
+}
+
+.report-container button{
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.report-container button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* Mobile Responsive */
+
+@media(max-width:900px){
+
+    .main-container{
+        flex-direction:column;
+    }
+
+    .left-section,
+    .report-container{
+        width:100%;
+    }
+
+    .left-section{
+        min-height:350px;
+    }
+
+    .overlay h2{
+        font-size:38px;
+    }
+
+    .report-container{
+        padding:30px;
+    }
+}
