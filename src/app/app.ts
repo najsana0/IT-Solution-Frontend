@@ -4,7 +4,8 @@ import { Report } from './report/report';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Report],
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

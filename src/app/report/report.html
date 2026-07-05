@@ -30,10 +30,10 @@
         <h2>Service Request Form</h2>
 
         <label>Name</label>
-        <input type="text" placeholder="Enter Your Name">
+        <input type="text" name="userName" [(ngModel)]="problem.userName" placeholder="Enter Your Name">
 
         <label>Contact Number</label>
-        <input type="tel" placeholder="Enter Contact Number">
+        <input type="tel" name="phone" [(ngModel)]="problem.phone" placeholder="Enter Contact Number">
 
         <label>Device Type</label>
         <select>
@@ -47,12 +47,11 @@
         </select>
 
         <label>Problem Description</label>
-        <textarea rows="5" placeholder="Describe the Problem"></textarea>
+        <textarea rows="5" name="problemDescription" [(ngModel)]="problem.problemDescription" placeholder="Describe the Problem"></textarea>
 
-        <button type="submit">
-            Submit Request
-        </button>
-
+        <button type="button" (click)="submit()">
+             Submit Request
+            </button>
     </div>
 
 </div>

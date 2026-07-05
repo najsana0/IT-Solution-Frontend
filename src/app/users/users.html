@@ -1,0 +1,56 @@
+<div class="users-container">
+
+  <h2>Manage Problems</h2>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Phone</th>
+        <th>Problem</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let p of problems">
+
+        <td>{{ p.userName }}</td>
+        <td>{{ p.phone }}</td>
+        <td>{{ p.problemDescription }}</td>
+        <td>{{ p.status }}</td>
+
+        <td>
+
+  <button
+    class="start-btn"
+    *ngIf="p.status == 'Waiting'"
+    (click)="start(p.id)">
+    Start
+  </button>
+
+  <button
+    class="resolve-btn"
+    *ngIf="p.status == 'SERVING'"
+    (click)="resolve(p.id)">
+    Resolve
+  </button>
+
+  <button
+    class="delete-btn"
+    (click)="remove(p.id)">
+    Remove
+  </button>
+
+</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
