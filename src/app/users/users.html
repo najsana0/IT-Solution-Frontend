@@ -1,11 +1,19 @@
 <div class="users-container">
 
-  <h2>Manage Problems</h2>
+  <!-- Header -->
+  <div class="header">
+    <h2>Manage Problems</h2>
 
-  <table>
+    <button class="dashboard-btn" (click)="openDashboard()">
+      Dashboard
+    </button>
+  </div>
+
+  <table *ngIf="problems.length > 0">
 
     <thead>
       <tr>
+        <th>ID</th>
         <th>User</th>
         <th>Phone</th>
         <th>Problem</th>
@@ -15,42 +23,44 @@
     </thead>
 
     <tbody>
-
       <tr *ngFor="let p of problems">
 
+        <td>{{ p.id }}</td>
         <td>{{ p.userName }}</td>
         <td>{{ p.phone }}</td>
         <td>{{ p.problemDescription }}</td>
         <td>{{ p.status }}</td>
 
         <td>
+          <button
+            class="start-btn"
+            *ngIf="p.status?.toLowerCase() === 'waiting'"
+            (click)="start(p.id)">
+            Start
+          </button>
 
-  <button
-    class="start-btn"
-    *ngIf="p.status == 'Waiting'"
-    (click)="start(p.id)">
-    Start
-  </button>
+          <button
+            class="resolve-btn"
+            *ngIf="p.status?.toLowerCase() === 'serving'"
+            (click)="resolve(p.id)">
+            Resolve
+          </button>
 
-  <button
-    class="resolve-btn"
-    *ngIf="p.status == 'SERVING'"
-    (click)="resolve(p.id)">
-    Resolve
-  </button>
-
-  <button
-    class="delete-btn"
-    (click)="remove(p.id)">
-    Remove
-  </button>
-
-</td>
+          <button
+            class="delete-btn"
+            (click)="remove(p.id)">
+            Delete
+          </button>
+        </td>
 
       </tr>
-
     </tbody>
 
   </table>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 TechRescue Service Center | All Rights Reserved</p>
+  </footer>
 
 </div>
