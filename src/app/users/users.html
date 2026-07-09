@@ -1,6 +1,6 @@
 <div class="users-container">
 
-  <!-- Header -->
+
   <div class="header">
     <h2>Manage Problems</h2>
 
@@ -8,12 +8,13 @@
       Dashboard
     </button>
   </div>
-
+  <br>
+  <h3>Total Records: {{ problems.length }}</h3>
   <table *ngIf="problems.length > 0">
 
     <thead>
       <tr>
-        <th>ID</th>
+        <!-- <th>ID</th> -->
         <th>User</th>
         <th>Phone</th>
         <th>Problem</th>
@@ -25,7 +26,7 @@
     <tbody>
       <tr *ngFor="let p of problems">
 
-        <td>{{ p.id }}</td>
+        <!-- <td>{{ p.id }}</td> -->
         <td>{{ p.userName }}</td>
         <td>{{ p.phone }}</td>
         <td>{{ p.problemDescription }}</td>
