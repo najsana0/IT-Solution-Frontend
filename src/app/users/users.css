@@ -1,12 +1,15 @@
 .header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
+  background:#2563eb;
+  color:white;
+  padding:18px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 .dashboard-btn{
-    background:#2563eb;
+    background:#0f172a;
     color:white;
     border:none;
     padding:10px 20px;
@@ -18,14 +21,11 @@
 .dashboard-btn:hover{
     background:#1d4ed8;
 }
-
 .footer{
-    margin-top:30px;
-    text-align:center;
-    padding:15px;
-    border-top:1px solid #ddd;
-    color:#666;
-    font-size:14px;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:15px;
 }
 * {
   margin: 0;

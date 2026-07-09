@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ProblemService } from '../problem-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-users',
@@ -19,7 +21,8 @@ export class Users implements OnInit {
 
 constructor(
   private problemService: ProblemService,
-  private router: Router
+  private router: Router,
+  private cdr: ChangeDetectorRef
 ) {}
 
   ngOnInit(): void {
@@ -27,16 +30,21 @@ constructor(
   }
 
   loadProblems(): void {
-    this.problemService.getAllProblems().subscribe({
-      next: (data: any[]) => {
-        console.log('Problems:', data);
-        this.problems = data;
-      },
-      error: (err) => {
-        console.error('Error:', err);
-      }
-    });
-  }
+  this.problemService.getAllProblems().subscribe({
+    next: (data: any[]) => {
+
+      console.log('API Data:', data);
+      console.log('Count:', data.length);
+
+      this.problems = [...data];
+
+      this.cdr.detectChanges();
+    },
+    error: (err) => {
+      console.error('Error:', err);
+    }
+  });
+}
 
   start(id: number): void {
   this.problemService.startProblem(id).subscribe({
@@ -51,6 +59,7 @@ constructor(
       });
 
       this.loadProblems();
+      
     }
   });
 }
