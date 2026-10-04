@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 
-
 @Component({
   selector: 'app-users',
   standalone: true,
