@@ -21,7 +21,7 @@ export interface Problem {
 export class ProblemService {
 
   private apiUrl =
-    'http://localhost:8080/userRegistration';
+  'https://it-solution-2ypn.onrender.com/userRegistration';
 
   constructor(private http: HttpClient) {}
 
